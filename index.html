@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Jockey+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Happy Birthday!</title>
+</head>
+<body>
+    <div class="container">
+        <div id="initial-screen">
+            <h1 class="title">Happy Birthday!</h1>
+            <div class="gift-container" onclick="openGift()">
+                <img src="—Pngtree—gift box_7058296.png" class="png" alt="gift">
+            </div>
+        </div>
+
+        <div id="congratulations-letter" class="letter hidden">
+            <h2>Selamat hari jadi!</h2>
+            <p>Halo kesayanganku. Apakah kamu tau berapa banyak orang yang hidupnya berubah jadi semakin cerah dan menarik karena kehadiran kamu di dunia ini? Bukan hanya aku, karena aku yakin banyak orang diluar sana setuju dan merasakan hal yang sama.</p>
+            <p>Ajaib, bukan? Padahal kita belum pernah saling berjabat tangan ataupun bertatap mata. Tapi kehadiranmu disana sudah cukup membuatku memiliki banyak kenangan dan momen bahagia dan tidak terlupakan.</p>
+            <button class="close-btn" onclick="showGratefulLetter()">Next →</button>
+        </div>
+
+        <div id="grateful-letter" class="letter hidden">
+            <h2>Terima kasihku untukmu</h2>
+            <p>Your kindness, smile, strength, words, and wonderful spirit that make every day brighter. Terima kasih sudah menjadi dirimu sendiri dan berjuang sampai hari ini.</p>
+            <p>Mungkin aku belum bisa jadi teman yang baik dan selalu ada buat kamu, aku menyadari itu. Tapi aku berusaha dan mau belajar untuk jadi lebih baik. Aku mau lebih dekat dan kenal kamu dengan baik. Jadi, kamu mau kan tetap bareng aku sampai tahun-tahun ke depannya? </p>
+            <p class="tanda">— your beloved, Auryn.</p>
+            <button class="close-btn" onclick="resetCard()">Back</button>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 0;
+        const colors = ['#F49BAB', '#9B7EBD', '#7F55B1', '#FFE1E0'];
+        
+        function openGift() {
+            document.getElementById('initial-screen').style.display = 'none';
+            document.getElementById('congratulations-letter').classList.remove('hidden');
+            document.getElementById('congratulations-letter').classList.add('show');
+            currentStep = 1;
+        }
+
+        function showGratefulLetter() {
+            document.getElementById('congratulations-letter').classList.remove('show');
+            document.getElementById('congratulations-letter').classList.add('hidden');
+            
+            setTimeout(() => {
+                document.getElementById('grateful-letter').classList.remove('hidden');
+                document.getElementById('grateful-letter').classList.add('show');
+                currentStep = 2;
+            }, 300);
+        }
+
+        function resetCard() {
+            document.getElementById('grateful-letter').classList.remove('show');
+            document.getElementById('grateful-letter').classList.add('hidden');
+            
+            setTimeout(() => {
+                document.getElementById('initial-screen').style.display = 'block';
+                currentStep = 0;
+            }, 300);
+        }
+
+    </script>
+</body>
+</html>
