@@ -161,6 +161,45 @@
             transition: background 0.3s ease;
         }
 
+        ul {
+            list-style: none;
+        }
+
+        .close-btn2 {
+            background: #F49BAB;
+            color: white;
+            border: none;
+            padding: 11px 20px;
+            border-radius: 05px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin-top: 25px;
+            width: 60%;
+            transition: background 0.3s ease;
+}
+        
+        .vid-play {
+            background: #F49BAB;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 05px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin-top: 20px;
+            margin-left: 20px;
+            width: 30%;
+            transition: background 0.3s ease;
+        }
+
+        button:active {
+            transform: scale(0.9);
+        }
+
         .tanda {
             text-align: right;
             font-weight: margin-top 20px;
