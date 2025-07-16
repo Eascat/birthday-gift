@@ -200,6 +200,13 @@
             transform: scale(0.9);
         }
 
+        .center {
+        position: absolute;
+        top: 10%;
+        width: 80%;
+        left: 10%;
+        }
+
         .tanda {
             text-align: right;
             font-weight: margin-top 20px;

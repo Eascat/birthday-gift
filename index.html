@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        
+
  
         <div id="initial-screen">
             <h1 class="title">Happy Birthday!</h1>
@@ -31,10 +31,27 @@
             <p>Mungkin aku belum bisa jadi teman yang baik dan selalu ada buat kamu, aku menyadari itu. Tapi aku berusaha dan mau belajar untuk jadi lebih baik. Aku mau lebih dekat dan kenal kamu dengan baik. Jadi, kamu mau kan tetap bareng aku sampai tahun-tahun ke depannya? </p>
             <p class="tanda">— your beloved, Auryn.</p>
             <button class="close-btn2" onclick="resetCard()">Back</button>
-            <button class="vid-play" onclick="playVideo()">. ♬ ݁˖</button>
+            <button class="vid-play" onclick="playVideo()" id="trigger">. ♬ ݁˖</button>
             
-            
+        
         </div>
+
+        <div>
+            <video class="center" id="myVideo" style="display: none;" autoplay muted controls>
+  <source src="ff9a6ba5e6ef885d0a0fe1b0d41bc110.mp4" type="video/mp4"></video>    
+<button id="closeBtn" style="
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  ">X</button>
+  </div>
+
     </div>
     <div>
         <img class="balloon" src="fe5269473c252a56e4b64044428c5e4a.png" alt="balloon">
@@ -79,6 +96,17 @@
                 currentStep = 0;
             }, 300);
         }
+          document.getElementById("trigger").addEventListener("click", function() {
+    const video = document.getElementById("myVideo");
+    video.style.display = "block";
+    video.play();
+
+    closeBtn.addEventListener("click", function() {
+        video.style.display = "none";
+        video.pause();
+    });
+    
+  });
     </script>
 </body>
 </html>
